@@ -8,5 +8,5 @@ CREATE TABLE tbl_locations(
 	city VARCHAR(30) NOT NULL,
 	state_province VARCHAR(25),
 	country CHAR(3),
-	CONSTRAINT FK_country_id FOREIGN KEY (country) REFERENCES tbl_country(id) 
+	CONSTRAINT FK_country_id FOREIGN KEY (country) REFERENCES tbl_countries(id) 
 );
