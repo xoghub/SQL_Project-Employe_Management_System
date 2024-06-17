@@ -1,0 +1,16 @@
+CREATE TABLE tbl_permintaan_peminjaman_barang (
+	id_permintaan_peminjaman INT IDENTITY(1,1) PRIMARY KEY,
+	id_employee INT,
+	id_barang INT,
+	alasan_peminjaman TEXT,
+	tanggal_peminjaman DATE,
+	tanggal_pinjam DATE,
+	tanggal_kembali DATE,
+	status_permintaan VARCHAR(20) CHECK (status_permintaan IN ( 'DISETUJUI', 'DITOLAK')),
+	tanggal_persetujuan DATE,
+	tanggal pengambilan DATE,
+	tanggal_pengembalian  DATE ,
+	FOREIGN KEY (id_employee) REFERENCES Employee(id_employee),
+  FOREIGN KEY (id_barang) REFERENCES Barang(id_barang)
+
+);
