@@ -21,8 +21,8 @@ ADD CONSTRAINT FK_manager_id
 
 ALTER TABLE tbl_employees
 ADD CONSTRAINT FK_job_id
-	FOREIGN KEY (job) REFERENCES tbl_job(PK_job_id);
+	FOREIGN KEY (job) REFERENCES tbl_jobs(id);
 
 ALTER TABLE tbl_employees
 ADD CONSTRAINT FK_department_id
-	FOREIGN KEY (department) REFERENCES tbl_department(PK_department_id);
+	FOREIGN KEY (department) REFERENCES tbl_departments(id);
