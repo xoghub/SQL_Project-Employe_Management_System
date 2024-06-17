@@ -1,0 +1,10 @@
+CREATE TABLE tbl_notifikasi_manager (
+	id_notifikasi INT PRIMARY KEY,
+	id_permintaan INT,
+	id_manager INT,
+	tipe_notifikasi VARCHAR(20) CHECK (tipe_notifikasi IN ('permintaan baru', 'persetujuan','ditolak')),
+	tanggal_notifikasi DATE,
+	status_notifikasi VARCHAR(20) CHECK (status_notifikasi IN ('terkirim', 'sudah dibaca')),
+	FOREIGN KEY (id_permintaan) REFERENCES permintaan(id_permintaan),
+    FOREIGN KEY (id_manager) REFERENCES manager(id_manager)
+);
