@@ -8,6 +8,6 @@ CREATE TABLE tbl_accounts(
 	otp INT,
 	is_expired DATETIME,
 	is_used bit,
-	CONSTRAINT PK_ID_ACCOUNT PRIMARY KEY (id)
-	CONSTRAINT FK_ID_ACCOUNT FOREIGN KEY (id, PK_employee_i) REFERENCES tbl_employees
+	CONSTRAINT PK_ID_ACCOUNT PRIMARY KEY (id),
+	CONSTRAINT FK_ID_ACCOUNT FOREIGN KEY (id) REFERENCES tbl_employees(PK_employee_id)
 )
